@@ -4,17 +4,23 @@
 
 #ifndef LAB_PA_VESPERTINO_2026_PUBLICACION_H
 #define LAB_PA_VESPERTINO_2026_PUBLICACION_H
+#include <iostream>
+
+using namespace std;
+
 
 
 
 class Publicacion {
-
-
-
-
-
-
-    
+    private:
+        string DOI;
+        string Titulo;
+        DTFecha fecha;
+    public:
+        Publicacion(string DOI, string Titulo, DTFecha fecha);
+        ~Publicacion();
+        Publicacion getDT();
+        virtual bool contenerPalabra(string palabra);
 
 };
 
