@@ -10,13 +10,13 @@
 class DTFecha {
     int Dia;
     int Mes;
-    int Año;
+    int Anio;
 
     public:
-    DTFecha(int dia, int mes, int año);
+    DTFecha(int dia, int mes, int anio);
     int getDia();
     int getMes();
-    int getAño();
+    int getAnio();
 };
 
 

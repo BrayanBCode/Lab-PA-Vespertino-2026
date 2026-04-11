@@ -4,7 +4,7 @@
 
 #ifndef LAB_PA_VESPERTINO_2026_PUBLICACION_H
 #define LAB_PA_VESPERTINO_2026_PUBLICACION_H
-#include <iostream>
+#include <string>
 #include "../DataType/DTFecha.h"
 #include "../DataType/DTRefer.h"
 
@@ -20,7 +20,9 @@ class Publicacion {
         virtual ~Publicacion();
         DTRefer getDT();
         virtual bool contenerPalabra(string palabra)=0;
-
+        DTFecha getFecha();
+        string getDOI();
+        void Publicacion::agregarAutor(string nombre);
 };
 
 

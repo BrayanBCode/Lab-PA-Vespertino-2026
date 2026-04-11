@@ -1,5 +1,34 @@
-//
-// Created by Lautaro on 10/4/2026.
-//
-
 #include "Investigador.h"
+#include <string>
+#include <list>
+#include <set>
+#include "../DataType/DTFecha.h"
+#include "../Publicacion/Publicacion.h"
+
+using namespace std;
+
+Investigador::Investigador(
+    string orcid,
+    string nombreI,
+    string Institucion) {
+    this-> ORCID = orcid;
+    this -> nombre = nombreI;
+    this-> Institucion = Institucion;
+}
+
+Investigador::~Investigador(){}
+
+void Investigador::agregarPublicacion(Publicacion* pub) {
+    publicaciones.insert(pub);
+    pub->agregarAutor(nombre);
+}
+
+list<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
+    list<string> resultado;
+    for (auto pub : publicaciones) {
+        if (pub->getFecha() > desde && pub->contienePalabra(palabra)) {
+            resultado.push_back(pub->getDOI());
+        }
+    }
+    return resultado;
+}

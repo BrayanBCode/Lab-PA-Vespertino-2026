@@ -15,8 +15,21 @@ Publicacion::Publicacion(string DOI, string Titulo, DTFecha * fecha) {
     this->fecha = fecha;
 }
 
-Publicacion::~Publicacion()
-{
+Publicacion::~Publicacion(){
 
+}
 
+string getDOI(){
+    return this->DOI;
+}
+
+DTFecha * getFecha(){
+    return this->fecha;
+}
+
+DTRefer Publicacion::getDT() {
+    return DTRefer(DOI, Titulo, fecha, autores);
+}
+void Publicacion::agregarAutor(string nombre) {
+    autores.insert(nombre);
 }
