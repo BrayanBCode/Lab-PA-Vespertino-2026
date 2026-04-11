@@ -15,14 +15,14 @@ class DTRefer {
     string DOI;
     string titulo;
     DTFecha * fecha;
-    list<string> autores;
+    list<string *> autores;
 
     public:
-        DTRefer(string DOI, string titulo, DTFecha * fecha, list<string> autores);
+        DTRefer(string DOI, string titulo, DTFecha * fecha, list<string *> autores);
         string getDOI();
         string getTitulo();
-        DTFecha getFecha();
-        list<string> getAutores();
+        DTFecha * getFecha();
+        list<string *> getAutores();
 
 };
 

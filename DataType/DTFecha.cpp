@@ -9,15 +9,15 @@ DTFecha::DTFecha(int dia, int mes, int anio) {
     this->Mes = mes;
     this->Anio = anio;
 }
-int getDia()
+int DTFecha::getDia()
 {
-    return this->dia;
+    return this->Dia;
 }
-int getMes()
+int DTFecha::getMes()
 {
-    return this->mes;
+    return this->Mes;
 }
-int getAño()
+int DTFecha::getAnio()
 {
     return this->Anio;
 }

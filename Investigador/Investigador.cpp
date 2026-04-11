@@ -23,8 +23,8 @@ void Investigador::agregarPublicacion(Publicacion* pub) {
     pub->agregarAutor(nombre);
 }
 
-list<string> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
-    list<string> resultado;
+list<string *> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
+    list<string *> resultado;
     for (auto pub : publicaciones) {
         if (pub->getFecha() > desde && pub->contienePalabra(palabra)) {
             resultado.push_back(pub->getDOI());
