@@ -11,18 +11,21 @@
 using namespace std;
 
 class Publicacion {
-    private:
+    protected:
         string DOI;
         string Titulo;
         DTFecha * fecha{};
     public:
-        Publicacion(string DOI, string Titulo, DTFecha * fecha);
-        virtual ~Publicacion();
         DTRefer getDT();
-        virtual bool contenerPalabra(string palabra)=0;
         DTFecha getFecha();
         string getDOI();
-        void Publicacion::agregarAutor(string nombre);
+
+        // Inicializa la funcion como vacia para evitar implementarla
+        virtual bool contenerPalabra(string palabra)=0;
+        void agregarAutor(string nombre);
+
+        Publicacion(string DOI, string Titulo, DTFecha * fecha);
+        virtual ~Publicacion();
 };
 
 
