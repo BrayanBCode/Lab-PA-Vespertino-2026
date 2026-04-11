@@ -4,12 +4,11 @@
 
 #ifndef LAB_PA_VESPERTINO_2026_INVESTIGADOR_H
 #define LAB_PA_VESPERTINO_2026_INVESTIGADOR_H
-#include <iostream>
 #include <string>
 #include <list>
+#include "../DataType/DTFecha.h"
 
 using namespace std;
-
 
 class Investigador {
     private:

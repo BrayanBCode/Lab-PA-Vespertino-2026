@@ -8,11 +8,13 @@
 #include <string>
 using namespace std;
 
-Publicacion :: Publicacion(string DOI, string Titulo, DTFecha fecha){
+
+Publicacion::Publicacion(string DOI, string Titulo, DTFecha * fecha) {
+    this->DOI = DOI;
     this->Titulo = Titulo;
     this->fecha = fecha;
-    this->DOI = DOI;
-};
+}
+
 Publicacion::~Publicacion()
 {
 
