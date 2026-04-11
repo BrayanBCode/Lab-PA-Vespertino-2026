@@ -7,7 +7,7 @@
 Articulo::Articulo(
     string DOI,
     string Titulo,
-    DTFecha fecha,
+    DTFecha * fecha,
     string revista,
     string extracto
     ) : Publicacion(DOI, Titulo, fecha) {

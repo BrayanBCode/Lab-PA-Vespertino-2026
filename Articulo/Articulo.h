@@ -15,7 +15,7 @@ class Articulo : Publicacion {
 
 
     public:
-        Articulo(string DOI, string Titulo, DTFecha fecha, string revista, string extracto);
+        Articulo(string DOI, string Titulo, DTFecha * fecha, string revista, string extracto);
 
     private:
         string revista;

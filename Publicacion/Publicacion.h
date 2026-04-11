@@ -6,6 +6,7 @@
 #define LAB_PA_VESPERTINO_2026_PUBLICACION_H
 #include <iostream>
 #include "../DataType/DTFecha.h"
+#include "../DataType/DTRefer.h"
 
 using namespace std;
 
@@ -17,8 +18,8 @@ class Publicacion {
     public:
         Publicacion(string DOI, string Titulo, DTFecha * fecha);
         virtual ~Publicacion();
-        Publicacion getDT();
-        virtual bool contenerPalabra(string palabra);
+        DTRefer getDT();
+        virtual bool contenerPalabra(string palabra)=0;
 
 };
 
