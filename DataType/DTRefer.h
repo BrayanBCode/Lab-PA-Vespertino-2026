@@ -23,7 +23,7 @@ class DTRefer {
         string getDOI();
         string getTitulo();
         DTFecha * getFecha();
-        list<Investigador *> getAutores();
+        list<string> getAutores();
 
 };
 
