@@ -17,6 +17,10 @@ Pagina_Web::Pagina_Web(
 }
 
 bool Pagina_Web::contienePalabra(string palabra) {
+    if (this->contenidoExtraido.find(palabra) == string::npos) {
+        return false;
+    }
+
     return true;
 }
 

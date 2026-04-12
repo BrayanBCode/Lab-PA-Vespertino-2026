@@ -4,14 +4,18 @@
 
 #include "Libro.h"
 
-Libro::Libro(string DOI, string Titulo, DTFecha *fecha, string editorial, list<string> palabarasDest) :
+Libro::Libro(string DOI, string Titulo, DTFecha *fecha, string editorial, list<string> palabrasDest) :
     Publicacion(DOI, Titulo, fecha) {
     this->editorial = editorial;
-    this->palabarasDestacadas = palabarasDest;
+    this->palabrasDestacadas = palabrasDest;
 }
 
 bool Libro::contienePalabra(string palabra) {
-    return true;
+    for (auto word : this->palabrasDestacadas) {
+        if (word == palabra) return true;
+    }
+
+    return false;
 }
 
 

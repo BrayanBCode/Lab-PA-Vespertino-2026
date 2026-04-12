@@ -17,5 +17,9 @@ Articulo::Articulo(
 }
 
 bool Articulo::contienePalabra(string palabra) {
+    if (this->extracto.find(palabra) == string::npos) {
+        return false;
+    }
+
     return true;
 }

@@ -15,11 +15,11 @@ using  namespace std;
 class Libro : public Publicacion {
     public:
         bool contienePalabra(string palabra) override;
-        Libro(string DOI, string Titulo, DTFecha * fecha, string editorial, list<string> palabarasDest);
+        Libro(string DOI, string Titulo, DTFecha * fecha, string editorial, list<string> palabrasDest);
 
     private:
         string editorial;
-        list<string> palabarasDestacadas;
+        list<string> palabrasDestacadas;
 
 };
 

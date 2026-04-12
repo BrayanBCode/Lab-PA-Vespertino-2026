@@ -13,13 +13,12 @@ using namespace std;
 class Pagina_Web : Publicacion {
     public:
         Pagina_Web(string DOI, string Titulo, DTFecha * fecha, string url, string contenidoExtraido);
+        bool contienePalabra(string palabra) override;
 
     private:
         string url;
         string contenidoExtraido;
 
-        protected:
-        bool contienePalabra(string palabra);
 };
 
 
