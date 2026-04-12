@@ -22,7 +22,8 @@ class Publicacion {
         DTFecha * getFecha();
         string getDOI();
 
-        virtual bool contienePalabra(string palabra);
+        // función abstracta
+        virtual bool contienePalabra(string palabra)=0;
         virtual void agregarAutor(Investigador * autor);
 
         Publicacion(string DOI, string Titulo, DTFecha * fecha);

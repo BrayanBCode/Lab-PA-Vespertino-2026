@@ -17,7 +17,7 @@ Publicacion::Publicacion(string DOI, string Titulo, DTFecha * fecha) {
     this->fecha = fecha;
 }
 
-Publicacion::~Publicacion(){}
+Publicacion::~Publicacion() {}
 
 string Publicacion::getDOI() {
     return this->DOI;
@@ -29,10 +29,6 @@ DTFecha * Publicacion::getFecha() {
 
 DTRefer * Publicacion::getDT() {
     return new DTRefer(this->DOI, this->Titulo, this->fecha, this->autores);
-}
-
-bool Publicacion::contienePalabra(string palabra) {
-    return true;
 }
 
 void Publicacion::agregarAutor(Investigador * autor) {
