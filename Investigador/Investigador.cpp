@@ -25,7 +25,6 @@ void Investigador::agregarPublicacion(Publicacion* pub) {
 list<string> Investigador::listarPublicaciones(DTFecha * desde, string palabra) {
     list<string> resultado;
     for (auto pub : publicaciones) {
-        // Usamos * para acceder al objeto DTFecha al que apunta el puntero
         if (pub->getFecha() > desde && pub->contienePalabra(palabra)) {
             resultado.push_back(pub->getDOI());
         }
