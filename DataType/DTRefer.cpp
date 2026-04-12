@@ -8,12 +8,11 @@
 
 using namespace std;
 
-DTRefer::DTRefer(string doi, string titulo, DTFecha* fecha, list<string *> autores){
+DTRefer::DTRefer(string doi, string titulo, DTFecha * fecha, list<Investigador *> autores){
     this->DOI = doi;
     this->titulo = titulo;
     this->fecha = fecha;
     this->autores = autores;
-
 }
 
 string DTRefer::getDOI(){
@@ -27,9 +26,11 @@ DTFecha * DTRefer::getFecha()
 {
     return this->fecha;
 }
-list<string *> DTRefer::getAutores(){
+list<Investigador *> DTRefer::getAutores(){
     for (auto autores : this->autores)
     {
         
     }
+
+    return this->autores;
 }

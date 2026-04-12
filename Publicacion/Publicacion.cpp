@@ -2,11 +2,13 @@
 // Created by Lucas on 10/4/2026.
 //
 
-#include "Publicacion.h"
 #include <iostream>
 #include <list>
 #include <string>
+
+#include "../Publicacion/Publicacion.h"
 using namespace std;
+
 
 
 Publicacion::Publicacion(string DOI, string Titulo, DTFecha * fecha) {
@@ -15,21 +17,24 @@ Publicacion::Publicacion(string DOI, string Titulo, DTFecha * fecha) {
     this->fecha = fecha;
 }
 
-Publicacion::~Publicacion(){
+Publicacion::~Publicacion(){}
 
-}
-
-string getDOI(){
+string Publicacion::getDOI() {
     return this->DOI;
 }
 
-DTFecha * getFecha(){
+DTFecha * Publicacion::getFecha() {
     return this->fecha;
 }
 
-DTRefer Publicacion::getDT() {
-    return DTRefer(DOI, Titulo, fecha, autores);
+DTRefer * Publicacion::getDT() {
+    return new DTRefer(this->DOI, this->Titulo, this->fecha, this->autores);
 }
-void Publicacion::agregarAutor(string nombre) {
-    autores.insert(nombre);
+
+bool Publicacion::contienePalabra(string palabra) {
+    return true;
+}
+
+void Publicacion::agregarAutor(Investigador * autor) {
+    this->autores.push_back(autor);
 }

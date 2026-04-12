@@ -15,3 +15,8 @@ Pagina_Web::Pagina_Web(
     this->url = url;
     this->contenidoExtraido = contenidoExtraido;
 }
+
+bool Pagina_Web::contienePalabra(string palabra) {
+    return true;
+}
+

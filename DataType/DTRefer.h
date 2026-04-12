@@ -7,7 +7,8 @@
 #include <string>
 #include "DTFecha.h"
 #include <list>
-#include "../Publicacion/Publicacion.h"
+
+#include "../Investigador/Investigador.h"
 
 using namespace std;
 
@@ -15,14 +16,14 @@ class DTRefer {
     string DOI;
     string titulo;
     DTFecha * fecha;
-    list<string *> autores;
+    list<Investigador *> autores;
 
     public:
-        DTRefer(string DOI, string titulo, DTFecha * fecha, list<string *> autores);
+        DTRefer(string DOI, string titulo, DTFecha * fecha, list<Investigador *> autores);
         string getDOI();
         string getTitulo();
         DTFecha * getFecha();
-        list<string *> getAutores();
+        list<Investigador *> getAutores();
 
 };
 

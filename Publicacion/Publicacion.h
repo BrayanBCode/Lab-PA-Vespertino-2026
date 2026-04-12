@@ -7,6 +7,7 @@
 #include <string>
 #include "../DataType/DTFecha.h"
 #include "../DataType/DTRefer.h"
+#include "../Investigador/Investigador.h"
 
 using namespace std;
 
@@ -14,20 +15,19 @@ class Publicacion {
     protected:
         string DOI;
         string Titulo;
-        DTFecha * fecha{};
+        DTFecha * fecha;
+        list<Investigador *> autores;
     public:
-        DTRefer getDT();
-        DTFecha getFecha();
+        DTRefer * getDT();
+        DTFecha * getFecha();
         string getDOI();
 
-        // Inicializa la funcion como vacia para evitar implementarla
-        virtual bool contenerPalabra(string palabra)=0;
-        void agregarAutor(string nombre);
+        virtual bool contienePalabra(string palabra);
+        virtual void agregarAutor(Investigador * autor);
 
         Publicacion(string DOI, string Titulo, DTFecha * fecha);
+
         virtual ~Publicacion();
 };
-
-
 
 #endif //LAB_PA_VESPERTINO_2026_PUBLICACION_H

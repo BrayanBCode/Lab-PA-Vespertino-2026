@@ -15,3 +15,7 @@ Articulo::Articulo(
     this->revista = revista;
     this->extracto = extracto;
 }
+
+bool Articulo::contienePalabra(string palabra) {
+    return true;
+}

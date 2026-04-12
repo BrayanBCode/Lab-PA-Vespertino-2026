@@ -21,3 +21,13 @@ int DTFecha::getAnio()
 {
     return this->Anio;
 }
+
+bool DTFecha::operator>(const DTFecha& otra) const {
+    if (this->Anio > otra.Anio) return true;
+    if (this->Anio < otra.Anio) return false;
+
+    if (this->Mes > otra.Mes) return true;
+    if (this->Mes < otra.Mes) return false;
+
+    return (this->Dia > otra.Dia);
+}

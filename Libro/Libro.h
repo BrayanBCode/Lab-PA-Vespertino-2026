@@ -4,13 +4,22 @@
 
 #ifndef LAB_PA_VESPERTINO_2026_LIBRO_H
 #define LAB_PA_VESPERTINO_2026_LIBRO_H
+#include <list>
 #include <string>
+
+#include "../DataType/DTFecha.h"
+#include "../Publicacion/Publicacion.h"
 
 using  namespace std;
 
-class Libro {
-    protected:
-        bool contienePalabra(string palabra);
+class Libro : public Publicacion {
+    public:
+        bool contienePalabra(string palabra) override;
+        Libro(string DOI, string Titulo, DTFecha * fecha, string editorial, list<string> palabarasDest);
+
+    private:
+        string editorial;
+        list<string> palabarasDestacadas;
 
 };
 

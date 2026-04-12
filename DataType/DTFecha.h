@@ -17,6 +17,8 @@ class DTFecha {
     int getDia();
     int getMes();
     int getAnio();
+
+    bool operator>(const DTFecha& otra) const;
 };
 
 

@@ -1,7 +1,6 @@
 #include "Investigador.h"
 #include <string>
 #include <list>
-#include <set>
 #include "../DataType/DTFecha.h"
 #include "../Publicacion/Publicacion.h"
 
@@ -19,16 +18,19 @@ Investigador::Investigador(
 Investigador::~Investigador(){}
 
 void Investigador::agregarPublicacion(Publicacion* pub) {
-    publicaciones.insert(pub);
-    pub->agregarAutor(nombre);
+    this->publicaciones.push_back(pub);
+    pub->agregarAutor(this);
 }
 
-list<string *> Investigador::listarPublicaciones(DTFecha desde, string palabra) {
-    list<string *> resultado;
+list<string> Investigador::listarPublicaciones(DTFecha * desde, string palabra) {
+    list<string> resultado;
     for (auto pub : publicaciones) {
+        // Usamos * para acceder al objeto DTFecha al que apunta el puntero
         if (pub->getFecha() > desde && pub->contienePalabra(palabra)) {
             resultado.push_back(pub->getDOI());
         }
     }
     return resultado;
 }
+
+

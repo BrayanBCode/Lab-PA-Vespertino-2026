@@ -12,16 +12,14 @@ using namespace std;
 
 class Pagina_Web : Publicacion {
     public:
-    Pagina_Web();
-
-    Pagina_Web(string DOI, string Titulo, DTFecha * fecha, string url, string contenidoExtraido);
+        Pagina_Web(string DOI, string Titulo, DTFecha * fecha, string url, string contenidoExtraido);
 
     private:
-    string url;
-    string contenidoExtraido;
+        string url;
+        string contenidoExtraido;
 
-    protected:
-    bool contienePalabra(string palabra);
+        protected:
+        bool contienePalabra(string palabra);
 };
 
 

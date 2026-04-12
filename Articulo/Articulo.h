@@ -16,13 +16,14 @@ class Articulo : Publicacion{
 
     public:
         Articulo(string DOI, string Titulo, DTFecha * fecha, string revista, string extracto);
+        bool contienePalabra(string palabra) override;
 
     private:
         string revista;
         string extracto;
 
-    protected:
-        bool contienePalabra(string palabra);
+
+
 };
 
 
