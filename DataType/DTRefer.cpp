@@ -46,5 +46,6 @@ std::ostream& operator<<(std::ostream& os, DTRefer& ref) {
         os << autor;
         first = false;
     }
+
     return os;
 }
