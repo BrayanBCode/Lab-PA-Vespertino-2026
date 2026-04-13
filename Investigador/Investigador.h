@@ -24,6 +24,8 @@ public:
     Investigador(string orcid, string nombre, string Institucion);
     ~Investigador();
 
+    string getNombre();
+
 private:
     string ORCID;
     string nombre;

@@ -27,11 +27,11 @@ DTFecha * DTRefer::getFecha()
     return this->fecha;
 }
 list<string> DTRefer::getAutores(){
-    list <string> autores;
-    for (auto autores : this->autores)
-    {
-        autores.push_back(autores->());
+    list <string> authors;
+
+    for (auto author : this->autores){
+        authors.push_back(author->getNombre());
     }
 
-    return autores;
+    return authors;
 }
