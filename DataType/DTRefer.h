@@ -19,12 +19,15 @@ class DTRefer {
     list<Investigador *> autores;
 
     public:
-        std::ostream& operator<<(std::ostream& os, DTRefer& ref);
+
+        friend ostream& operator<<(ostream& os, const DTRefer& p);
         DTRefer(string DOI, string titulo, DTFecha * fecha, list<Investigador *> autores);
         string getDOI();
         string getTitulo();
         DTFecha * getFecha();
         list<string> getAutores();
+
+        string toString() const;
 
 };
 

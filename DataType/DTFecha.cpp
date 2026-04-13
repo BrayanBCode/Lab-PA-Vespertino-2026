@@ -9,17 +9,20 @@ DTFecha::DTFecha(int dia, int mes, int anio) {
     this->Mes = mes;
     this->Anio = anio;
 }
-int DTFecha::getDia()
-{
+
+int DTFecha::getDia() {
     return this->Dia;
 }
-int DTFecha::getMes()
-{
+
+int DTFecha::getMes() {
     return this->Mes;
 }
-int DTFecha::getAnio()
-{
+int DTFecha::getAnio() {
     return this->Anio;
+}
+
+string DTFecha::toString() const {
+    return to_string(this->Dia) + "/" + to_string(this->Mes) + "/" + to_string(this->Anio);
 }
 
 bool DTFecha::operator>(const DTFecha& otra) const {
@@ -29,5 +32,5 @@ bool DTFecha::operator>(const DTFecha& otra) const {
     if (this->Mes > otra.Mes) return true;
     if (this->Mes < otra.Mes) return false;
 
-    return (this->Dia > otra.Dia);
+    return this->Dia > otra.Dia;
 }

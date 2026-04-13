@@ -15,15 +15,13 @@ DTRefer::DTRefer(string doi, string titulo, DTFecha * fecha, list<Investigador *
     this->autores = autores;
 }
 
-string DTRefer::getDOI(){
+string DTRefer::getDOI() {
     return this->DOI;
 }
-string DTRefer::getTitulo()
-{
+string DTRefer::getTitulo() {
     return this->titulo;
 }
-DTFecha * DTRefer::getFecha()
-{
+DTFecha * DTRefer::getFecha() {
     return this->fecha;
 }
 
@@ -35,17 +33,18 @@ list<string> DTRefer::getAutores() {
     return nombres;
 }
 
+std::ostream& operator<<(std::ostream& os, const DTRefer& p) {
+    os << p.toString();
+    return os;
+}
 
-std::ostream& operator<<(std::ostream& os, DTRefer& ref) {
-    os << ref.getDOI() << "->" << ref.getTitulo()
-       << "(" << ref.getFecha()->toString() << ")/";
+string DTRefer::toString() const {
 
-    bool first = true;
-    for (auto& autor : ref.getAutores()) {
-        if (!first) os << ",";
-        os << autor;
-        first = false;
+    string ret = this->DOI + "->" + this->titulo + "(" + this->fecha->toString() + ") / ";
+
+    for (auto auhor : this->autores) {
+        ret += auhor->toString() + ", ";
     }
 
-    return os;
+    return ret;
 }
