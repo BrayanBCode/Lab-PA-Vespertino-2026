@@ -23,12 +23,10 @@ public:
 
     Investigador(string orcid, string nombre, string Institucion);
     ~Investigador();
-    string getOCID;
+    string getORCID();
     string getNombre();
     string getInstitucion();
-    list getpublicaciones();
-
-    string getNombre();
+    list<Publicacion *> getPublicaciones();
 
 private:
     string ORCID;

@@ -17,10 +17,6 @@ Investigador::Investigador(
 
 Investigador::~Investigador(){}
 
-string Investigador::getNombre() {
-    return this->nombre;
-}
-
 void Investigador::agregarPublicacion(Publicacion* pub) {
     this->publicaciones.push_back(pub);
     pub->agregarAutor(this);
@@ -36,15 +32,18 @@ list<string> Investigador::listarPublicaciones(DTFecha * desde, string palabra) 
     return resultado;
 }
 
-string Investigador::getORCID() {
-	return this->ORCID;}
-
 string Investigador::getNombre() {
-return this->nombre;}
+    return this->nombre;
+}
+
+string Investigador::getORCID() {
+	return this->ORCID;
+}
 
 string Investigador::getInstitucion() {
-return this->Institucion;}
+    return this->Institucion;
+}
 
-list getpublicaciones() {
-for (auto pub : publicaciones) {
-return pub->listarPublicaciones(this);}
+list<Publicacion *> Investigador::getPublicaciones() {
+    return this->publicaciones;
+}
