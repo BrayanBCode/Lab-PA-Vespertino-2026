@@ -32,4 +32,15 @@ list<string> Investigador::listarPublicaciones(DTFecha * desde, string palabra) 
     return resultado;
 }
 
+string Investigador::getORCID() {
+	return this->ORCID;}
 
+string Investigador::getNombre() {
+return this->nombre;}
+
+string Investigador::getInstitucion() {
+return this->Institucion;}
+
+list getpublicaciones() {
+for (auto pub : publicaciones) {
+return pub->listarPublicaciones(this);}

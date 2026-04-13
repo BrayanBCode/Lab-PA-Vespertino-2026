@@ -26,12 +26,25 @@ DTFecha * DTRefer::getFecha()
 {
     return this->fecha;
 }
-list<string> DTRefer::getAutores(){
-    list <string> autores;
-    for (auto autores : this->autores)
-    {
-        autores.push_back(autores->());
-    }
 
-    return autores;
+list<string> DTRefer::getAutores() {
+    list<string> nombres;
+    for (auto inv : this->autores) {
+        nombres.push_back(inv->getNombre());
+    }
+    return nombres;
+}
+
+
+std::ostream& operator<<(std::ostream& os, DTRefer& ref) {
+    os << ref.getDOI() << "->" << ref.getTitulo()
+       << "(" << ref.getFecha()->toString() << ")/";
+
+    bool first = true;
+    for (auto& autor : ref.getAutores()) {
+        if (!first) os << ",";
+        os << autor;
+        first = false;
+    }
+    return os;
 }
