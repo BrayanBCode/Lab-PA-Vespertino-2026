@@ -28,6 +28,8 @@ public:
     string getInstitucion();
     list getpublicaciones();
 
+    string getNombre();
+
 private:
     string ORCID;
     string nombre;

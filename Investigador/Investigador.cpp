@@ -17,6 +17,10 @@ Investigador::Investigador(
 
 Investigador::~Investigador(){}
 
+string Investigador::getNombre() {
+    return this->nombre;
+}
+
 void Investigador::agregarPublicacion(Publicacion* pub) {
     this->publicaciones.push_back(pub);
     pub->agregarAutor(this);
