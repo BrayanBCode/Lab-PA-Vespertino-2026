@@ -17,7 +17,15 @@ Publicacion::Publicacion(string DOI, string Titulo, DTFecha * fecha) {
     this->fecha = fecha;
 }
 
-Publicacion::~Publicacion() {}
+Publicacion::~Publicacion() {
+    //Por lo que vi los otros atributos si eliminas la publicacion ya se pierden debido a que son std, no se si es correcto.
+    if (fecha != nullptr) {
+        delete fecha;
+        fecha = nullptr;
+    }
+
+
+}
 
 string Publicacion::getDOI() {
     return this->DOI;
