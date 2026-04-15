@@ -42,8 +42,8 @@ string DTRefer::toString() const {
 
     string ret = this->DOI + "->" + this->titulo + "(" + this->fecha->toString() + ") / ";
 
-    for (auto auhor : this->autores) {
-        ret += auhor->toString() + ", ";
+    for (auto author : this->autores) {
+        ret += author->getNombre() + ", ";
     }
 
     return ret;
