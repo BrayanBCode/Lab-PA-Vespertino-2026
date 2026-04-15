@@ -18,13 +18,9 @@ Publicacion::Publicacion(string DOI, string Titulo, DTFecha * fecha) {
 }
 
 Publicacion::~Publicacion() {
-    //Por lo que vi los otros atributos si eliminas la publicacion ya se pierden debido a que son std, no se si es correcto.
-    if (fecha != nullptr) {
-        delete fecha;
-        fecha = nullptr;
+    for (auto autor : this->autores) {
+        autor->removeReference(this);
     }
-
-
 }
 
 string Publicacion::getDOI() {
@@ -41,4 +37,9 @@ DTRefer * Publicacion::getDT() {
 
 void Publicacion::agregarAutor(Investigador * autor) {
     this->autores.push_back(autor);
+}
+
+// Elimina todas las referencias de la publicacion en cada Investigador
+void Publicacion::removeReference(Investigador *autor) {
+    this->autores.remove(autor);
 }

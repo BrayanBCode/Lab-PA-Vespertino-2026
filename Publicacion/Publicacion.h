@@ -25,6 +25,7 @@ class Publicacion {
         // función abstracta
         virtual bool contienePalabra(string palabra)=0;
         void agregarAutor(Investigador * autor);
+        void removeReference(Investigador * autor);
 
         Publicacion(string DOI, string Titulo, DTFecha * fecha);
 

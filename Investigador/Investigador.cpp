@@ -15,7 +15,12 @@ Investigador::Investigador(
     this-> Institucion = Institucion;
 }
 
-Investigador::~Investigador(){}
+// Elimina todas las referencias del Investigador en cada publicacion
+Investigador::~Investigador() {
+    for(auto pub : this->publicaciones) {
+        pub->removeReference(this);
+    }
+}
 
 void Investigador::agregarPublicacion(Publicacion* pub) {
     this->publicaciones.push_back(pub);
@@ -46,4 +51,8 @@ string Investigador::getInstitucion() {
 
 list<Publicacion *> Investigador::getPublicaciones() {
     return this->publicaciones;
+}
+
+void Investigador::removeReference(Publicacion* pub) {
+    this->publicaciones.remove(pub);
 }

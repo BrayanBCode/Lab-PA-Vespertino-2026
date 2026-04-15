@@ -27,6 +27,7 @@ public:
     string getNombre();
     string getInstitucion();
     list<Publicacion *> getPublicaciones();
+    void removeReference(Publicacion* pub);
 
 private:
     string ORCID;
