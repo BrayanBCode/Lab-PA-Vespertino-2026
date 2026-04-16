@@ -56,8 +56,11 @@ int main() {
 
     // Se debe utilizar "*" ya que estamos trabajando con punteros,
     // al utilizarlo hacemos referencia al objeto y no al puntero
-    cout<<*art2->getDT()<<endl;
-
+    cout << *art1->getDT()<<endl;
+    cout << *art2->getDT()<<endl;
+    cout << *lib1->getDT()<<endl;
+    cout << *lib2->getDT()<<endl;
+    cout << *pag1->getDT()<<endl;
     cout<<endl;
 
     Investigador * inv1 = new Investigador("0000-0003-1234-5678", "Carla Oliveri", "Universidad de la Republica");
