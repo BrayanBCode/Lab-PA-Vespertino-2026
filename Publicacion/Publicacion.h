@@ -21,6 +21,7 @@ class Publicacion {
         DTRefer * getDT();
         DTFecha * getFecha();
         string getDOI();
+        string getTitulo();
 
         // función abstracta
         virtual bool contienePalabra(string palabra)=0;

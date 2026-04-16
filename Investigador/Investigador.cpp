@@ -27,15 +27,20 @@ void Investigador::agregarPublicacion(Publicacion* pub) {
     pub->agregarAutor(this);
 }
 
+// !!Odio esta función!! - att: brihan
 list<string> Investigador::listarPublicaciones(DTFecha * desde, string palabra) {
     list<string> resultado;
     for (auto pub : publicaciones) {
-        if (pub->getFecha() > desde && pub->contienePalabra(palabra)) {
-            resultado.push_back(pub->getDOI());
+        DTFecha* fechaPub = pub->getFecha();
+        if (fechaPub != nullptr && desde != nullptr) {
+            if (*fechaPub > *desde && pub->contienePalabra(palabra)) {
+                resultado.push_back(pub->getDOI());
+            }
         }
     }
     return resultado;
 }
+
 
 string Investigador::getNombre() {
     return this->nombre;
@@ -55,4 +60,9 @@ list<Publicacion *> Investigador::getPublicaciones() {
 
 void Investigador::removeReference(Publicacion* pub) {
     this->publicaciones.remove(pub);
+}
+
+string Investigador::toString() {
+    // ORCID->nombre/institucion
+    return this->getORCID() + "->" + this->getNombre() + "/"  + this->getInstitucion();
 }

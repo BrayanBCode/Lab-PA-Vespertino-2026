@@ -10,7 +10,7 @@
 using namespace std;
 
 
-class Pagina_Web : Publicacion {
+class Pagina_Web : public Publicacion {
     public:
         Pagina_Web(string DOI, string Titulo, DTFecha * fecha, string url, string contenidoExtraido);
         bool contienePalabra(string palabra) override;

@@ -20,6 +20,7 @@ class DTFecha {
         int getAnio();
 
         bool operator>(const DTFecha& otra) const;
+        bool operator<(const DTFecha& otra) const;
 
         string toString() const;
 };

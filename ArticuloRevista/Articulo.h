@@ -11,7 +11,7 @@
 using namespace std;
 
 
-class Articulo : Publicacion{
+class Articulo : public Publicacion {
 
 
     public:

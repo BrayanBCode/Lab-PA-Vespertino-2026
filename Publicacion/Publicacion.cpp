@@ -35,6 +35,10 @@ DTRefer * Publicacion::getDT() {
     return new DTRefer(this->DOI, this->Titulo, this->fecha, this->autores);
 }
 
+string Publicacion::getTitulo() {
+    this->Titulo;
+}
+
 void Publicacion::agregarAutor(Investigador * autor) {
     this->autores.push_back(autor);
 }

@@ -6,6 +6,7 @@
 #define LAB_PA_VESPERTINO_2026_DTREFER_H
 #include <string>
 #include "DTFecha.h"
+#include <iostream>
 #include <list>
 
 #include "../Investigador/Investigador.h"
@@ -20,7 +21,7 @@ class DTRefer {
 
     public:
 
-        friend ostream& operator<<(ostream& os, const DTRefer& p);
+        friend std::ostream& operator<<(std::ostream& os, const DTRefer& p);
         DTRefer(string DOI, string titulo, DTFecha * fecha, list<Investigador *> autores);
         string getDOI();
         string getTitulo();

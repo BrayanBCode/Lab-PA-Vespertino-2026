@@ -3,6 +3,10 @@
 //
 
 #include "DTFecha.h"
+#include <iostream>
+#include <ostream>
+
+using namespace std;
 
 DTFecha::DTFecha(int dia, int mes, int anio) {
     this->Dia = dia;
@@ -25,12 +29,14 @@ string DTFecha::toString() const {
     return to_string(this->Dia) + "/" + to_string(this->Mes) + "/" + to_string(this->Anio);
 }
 
+bool DTFecha::operator<(const DTFecha& otra) const {
+    if (this->Anio != otra.Anio) return this->Anio < otra.Anio;
+    if (this->Mes != otra.Mes) return this->Mes < otra.Mes;
+    return this->Dia < otra.Dia;
+}
+
 bool DTFecha::operator>(const DTFecha& otra) const {
-    if (this->Anio > otra.Anio) return true;
-    if (this->Anio < otra.Anio) return false;
-
-    if (this->Mes > otra.Mes) return true;
-    if (this->Mes < otra.Mes) return false;
-
+    if (this->Anio != otra.Anio) return this->Anio > otra.Anio;
+    if (this->Mes != otra.Mes) return this->Mes > otra.Mes;
     return this->Dia > otra.Dia;
 }

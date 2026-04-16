@@ -3,6 +3,7 @@
 //
 
 #include "DTRefer.h"
+#include <iostream>
 #include <list>
 #include <string>
 
@@ -40,7 +41,7 @@ std::ostream& operator<<(std::ostream& os, const DTRefer& p) {
 
 string DTRefer::toString() const {
 
-    string ret = this->DOI + "->" + this->titulo + "(" + this->fecha->toString() + ") / ";
+    string ret = this->DOI + "->" + this->titulo + "(" + this->fecha->toString() + ")/ ";
 
     for (auto author : this->autores) {
         ret += author->getNombre() + ", ";
