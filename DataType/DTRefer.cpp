@@ -41,10 +41,16 @@ std::ostream& operator<<(std::ostream& os, const DTRefer& p) {
 
 string DTRefer::toString() const {
 
-    string ret = this->DOI + "->" + this->titulo + "(" + this->fecha->toString() + ")/ ";
+    string ret = this->DOI + "->" + this->titulo + "(" + this->fecha->toString() + ")/";
 
+    bool first = false;
     for (auto author : this->autores) {
-        ret += author->getNombre() + ", ";
+        if (!first) {
+            first = true;
+            ret += author->getNombre();
+            continue;
+        }
+        ret += ", " + author->getNombre();
     }
 
     return ret;
