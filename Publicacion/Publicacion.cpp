@@ -36,7 +36,7 @@ DTRefer * Publicacion::getDT() {
 }
 
 string Publicacion::getTitulo() {
-    this->Titulo;
+    return this->Titulo;
 }
 
 void Publicacion::agregarAutor(Investigador * autor) {
