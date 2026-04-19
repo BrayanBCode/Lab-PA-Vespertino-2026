@@ -80,19 +80,23 @@ int main() {
     inv2->agregarPublicacion(lib1);
     inv2->agregarPublicacion(art2);
 
-    list<string> res = inv2->listarPublicaciones(new DTFecha(10, 12, 2023), "UML");
+    cout<< "10/12/2023" << endl;
+    list<string> res = inv1->listarPublicaciones(new DTFecha(10, 12, 2023), "UML");
     for (auto pub : res ) {
         cout<<pub<<endl;
     }
 
     cout<<endl;
+
     delete art2;
 
-    list<string> res1 = inv2->listarPublicaciones(new DTFecha(1, 1, 2020), "UML");
+    cout<<  "1/1/2020" << endl;
+    list<string> res1 = inv1->listarPublicaciones(new DTFecha(1, 1, 2020), "UML");
     for (auto pub : res1 ) {
         cout<<pub<<endl;
     }
 
+    cout<<endl;
 
     // art2 // Objeto eliminado mediante "delete"
     cout << *art1->getDT()<<endl;

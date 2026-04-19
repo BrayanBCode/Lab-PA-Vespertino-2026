@@ -12,7 +12,7 @@ Libro::Libro(string DOI, string Titulo, DTFecha *fecha, string editorial, list<s
 
 bool Libro::contienePalabra(string palabra) {
     for (auto word : this->palabrasDestacadas) {
-        if (word == palabra) return true;
+        if (word.find(palabra) != string::npos) return true;
     }
 
     return false;
