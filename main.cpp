@@ -104,5 +104,7 @@ int main() {
     cout << *lib2->getDT()<<endl;
     cout << *pag1->getDT()<<endl;
 
+    cout<<endl;
+
     return 0;
 }
